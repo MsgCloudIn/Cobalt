@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry including="**/*.java" kind="src" output="target/test-classes" path="src/test/java"/>
+	<classpathentry excluding="**/*.java" kind="src" output="target/test-classes" path="src/test/resources"/>
+	<classpathentry including="**/*.java" kind="src" path="src/main/java"/>
+	<classpathentry excluding="**/*.java" kind="src" path="src/main/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/OpenJDK 23.0.1 [23.0.1]">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/com/google/zxing/javase/3.5.1/javase-3.5.1.jar" sourcepath="M2_REPO/com/google/zxing/javase/3.5.1/javase-3.5.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/zxing/core/3.5.1/core-3.5.1.jar" sourcepath="M2_REPO/com/google/zxing/core/3.5.1/core-3.5.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/beust/jcommander/1.82/jcommander-1.82.jar" sourcepath="M2_REPO/com/beust/jcommander/1.82/jcommander-1.82-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/github/jai-imageio/jai-imageio-core/1.4.0/jai-imageio-core-1.4.0.jar" sourcepath="M2_REPO/com/github/jai-imageio/jai-imageio-core/1.4.0/jai-imageio-core-1.4.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/github/auties00/qr-terminal/2.2/qr-terminal-2.2.jar" sourcepath="M2_REPO/com/github/auties00/qr-terminal/2.2/qr-terminal-2.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/github/auties00/curve25519/1.2/curve25519-1.2.jar" sourcepath="M2_REPO/com/github/auties00/curve25519/1.2/curve25519-1.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/github/auties00/protobuf-base/3.3.0/protobuf-base-3.3.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/github/auties00/protobuf-serialization-plugin/3.3.0/protobuf-serialization-plugin-3.3.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/io/github/classgraph/classgraph/4.8.157/classgraph-4.8.157.jar" sourcepath="M2_REPO/io/github/classgraph/classgraph/4.8.157/classgraph-4.8.157-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.2/jackson-module-parameter-names-2.15.2.jar" sourcepath="M2_REPO/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.2/jackson-module-parameter-names-2.15.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.2/jackson-datatype-jdk8-2.15.2.jar" sourcepath="M2_REPO/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.2/jackson-datatype-jdk8-2.15.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.2/jackson-datatype-jsr310-2.15.2.jar" sourcepath="M2_REPO/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.2/jackson-datatype-jsr310-2.15.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/googlecode/libphonenumber/libphonenumber/8.13.13/libphonenumber-8.13.13.jar" sourcepath="M2_REPO/com/googlecode/libphonenumber/libphonenumber/8.13.13/libphonenumber-8.13.13-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/github/auties00/link-preview/2.3/link-preview-2.3.jar" sourcepath="M2_REPO/com/github/auties00/link-preview/2.3/link-preview-2.3-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jsoup/jsoup/1.15.4/jsoup-1.15.4.jar" sourcepath="M2_REPO/org/jsoup/jsoup/1.15.4/jsoup-1.15.4-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/aspose/aspose-words/22.11/aspose-words-22.11-jdk17.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/jogl/jogl-all-main/2.3.2/jogl-all-main-2.3.2.jar" sourcepath="M2_REPO/org/jogamp/jogl/jogl-all-main/2.3.2/jogl-all-main-2.3.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/jogl/jogl-all/2.3.2/jogl-all-2.3.2.jar" sourcepath="M2_REPO/org/jogamp/jogl/jogl-all/2.3.2/jogl-all-2.3.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/jogl/jogl-all/2.3.2/jogl-all-2.3.2-natives-android-aarch64.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/jogl/jogl-all/2.3.2/jogl-all-2.3.2-natives-android-armv6.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/jogl/jogl-all/2.3.2/jogl-all-2.3.2-natives-linux-amd64.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/jogl/jogl-all/2.3.2/jogl-all-2.3.2-natives-linux-armv6.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/jogl/jogl-all/2.3.2/jogl-all-2.3.2-natives-linux-armv6hf.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/jogl/jogl-all/2.3.2/jogl-all-2.3.2-natives-linux-i586.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/jogl/jogl-all/2.3.2/jogl-all-2.3.2-natives-macosx-universal.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/jogl/jogl-all/2.3.2/jogl-all-2.3.2-natives-solaris-amd64.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/jogl/jogl-all/2.3.2/jogl-all-2.3.2-natives-solaris-i586.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/jogl/jogl-all/2.3.2/jogl-all-2.3.2-natives-windows-amd64.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/jogl/jogl-all/2.3.2/jogl-all-2.3.2-natives-windows-i586.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/gluegen/gluegen-rt-main/2.3.2/gluegen-rt-main-2.3.2.jar" sourcepath="M2_REPO/org/jogamp/gluegen/gluegen-rt-main/2.3.2/gluegen-rt-main-2.3.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/gluegen/gluegen-rt/2.3.2/gluegen-rt-2.3.2.jar" sourcepath="M2_REPO/org/jogamp/gluegen/gluegen-rt/2.3.2/gluegen-rt-2.3.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/gluegen/gluegen-rt/2.3.2/gluegen-rt-2.3.2-natives-android-aarch64.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/gluegen/gluegen-rt/2.3.2/gluegen-rt-2.3.2-natives-android-armv6.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/gluegen/gluegen-rt/2.3.2/gluegen-rt-2.3.2-natives-linux-amd64.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/gluegen/gluegen-rt/2.3.2/gluegen-rt-2.3.2-natives-linux-armv6.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/gluegen/gluegen-rt/2.3.2/gluegen-rt-2.3.2-natives-linux-armv6hf.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/gluegen/gluegen-rt/2.3.2/gluegen-rt-2.3.2-natives-linux-i586.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/gluegen/gluegen-rt/2.3.2/gluegen-rt-2.3.2-natives-macosx-universal.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/gluegen/gluegen-rt/2.3.2/gluegen-rt-2.3.2-natives-solaris-amd64.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/gluegen/gluegen-rt/2.3.2/gluegen-rt-2.3.2-natives-solaris-i586.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/gluegen/gluegen-rt/2.3.2/gluegen-rt-2.3.2-natives-windows-amd64.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jogamp/gluegen/gluegen-rt/2.3.2/gluegen-rt-2.3.2-natives-windows-i586.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/github/kokorin/jaffree/jaffree/2023.09.10/jaffree-2023.09.10.jar" sourcepath="M2_REPO/com/github/kokorin/jaffree/jaffree/2023.09.10/jaffree-2023.09.10-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/grack/nanojson/1.7/nanojson-1.7.jar" sourcepath="M2_REPO/com/grack/nanojson/1.7/nanojson-1.7-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/googlecode/ez-vcard/ez-vcard/0.12.1/ez-vcard-0.12.1.jar" sourcepath="M2_REPO/com/googlecode/ez-vcard/ez-vcard/0.12.1/ez-vcard-0.12.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/github/mangstadt/vinnie/2.0.2/vinnie-2.0.2.jar" sourcepath="M2_REPO/com/github/mangstadt/vinnie/2.0.2/vinnie-2.0.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/freemarker/freemarker/2.3.32/freemarker-2.3.32.jar" sourcepath="M2_REPO/org/freemarker/freemarker/2.3.32/freemarker-2.3.32-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-nop/2.0.13/slf4j-nop-2.0.13.jar" sourcepath="M2_REPO/org/slf4j/slf4j-nop/2.0.13/slf4j-nop-2.0.13-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/junit/jupiter/junit-jupiter/5.10.0-M1/junit-jupiter-5.10.0-M1.jar" sourcepath="M2_REPO/org/junit/jupiter/junit-jupiter/5.10.0-M1/junit-jupiter-5.10.0-M1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/junit/jupiter/junit-jupiter-api/5.10.0-M1/junit-jupiter-api-5.10.0-M1.jar" sourcepath="M2_REPO/org/junit/jupiter/junit-jupiter-api/5.10.0-M1/junit-jupiter-api-5.10.0-M1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar" sourcepath="M2_REPO/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/junit/platform/junit-platform-commons/1.10.0-M1/junit-platform-commons-1.10.0-M1.jar" sourcepath="M2_REPO/org/junit/platform/junit-platform-commons/1.10.0-M1/junit-platform-commons-1.10.0-M1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar" sourcepath="M2_REPO/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/junit/jupiter/junit-jupiter-params/5.10.0-M1/junit-jupiter-params-5.10.0-M1.jar" sourcepath="M2_REPO/org/junit/jupiter/junit-jupiter-params/5.10.0-M1/junit-jupiter-params-5.10.0-M1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/junit/jupiter/junit-jupiter-engine/5.10.0-M1/junit-jupiter-engine-5.10.0-M1.jar" sourcepath="M2_REPO/org/junit/jupiter/junit-jupiter-engine/5.10.0-M1/junit-jupiter-engine-5.10.0-M1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/junit/platform/junit-platform-engine/1.10.0-M1/junit-platform-engine-1.10.0-M1.jar" sourcepath="M2_REPO/org/junit/platform/junit-platform-engine/1.10.0-M1/junit-platform-engine-1.10.0-M1-sources.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
