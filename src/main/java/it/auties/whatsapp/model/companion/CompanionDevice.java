@@ -167,6 +167,7 @@ public final class CompanionDevice {
         return switch (platform()) {
             case ANDROID, ANDROID_BUSINESS -> manufacturer + "-" + model;
             case IOS, IOS_BUSINESS -> model;
+            case WEB -> model;
             default -> throw new IllegalStateException("Unsupported mobile os");
         };
     }
@@ -177,6 +178,7 @@ public final class CompanionDevice {
             case ANDROID_BUSINESS -> "SMBA";
             case IOS -> "iOS";
             case IOS_BUSINESS -> "SMB iOS";
+            case WEB -> "WEB";
             default -> throw new IllegalStateException("Unsupported mobile os");
         };
     }
