@@ -942,8 +942,14 @@ public class Whatsapp {
      * @return a CompletableFuture that wraps a non-null newsletters
      */
     public CompletableFuture<Boolean> hasWhatsapp(JidProvider contact) {
-        return hasWhatsapp(new JidProvider[]{contact})
-                .thenApply(result -> result.get(contact.toJid()));
+    	return hasWhatsapp(new JidProvider[] { contact }).thenApply(result -> {
+			for (Jid jid : result.keySet()) {
+				if (jid.toPhoneNumber().equals(contact.toJid().toPhoneNumber())) {
+					return result.get(jid);
+				}
+			}
+			return false;
+		});
     }
 
     /**
@@ -986,9 +992,25 @@ public class Whatsapp {
         var result = nodes.stream()
                 .map(this::parseHasWhatsappResponse)
                 .collect(Collectors.toMap(HasWhatsappResponse::contact, HasWhatsappResponse::hasWhatsapp, (first, second) -> first, HashMap::new));
-        contacts.stream()
-                .filter(contact -> !result.containsKey(contact))
-                .forEach(contact -> result.put(contact, false));
+		// HACK
+		// We should compare with PhoneNumber not the contact
+		/*
+		 * contacts.stream() .filter(contact -> !result.containsKey(contact))
+		 * .forEach(contact -> result.put(contact, false));
+		 */
+
+		for (Jid contact : contacts) {
+			boolean found = false;
+			for (Jid resultJid : result.keySet()) {
+				if (resultJid.toPhoneNumber().equals(contact.toPhoneNumber())) {
+					found = true;
+				}
+			}
+			if (!found) {
+				result.put(contact, false);
+			}
+		}
+
         return result;
     }
 
