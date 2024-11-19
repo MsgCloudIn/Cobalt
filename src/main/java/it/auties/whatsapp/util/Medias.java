@@ -313,7 +313,7 @@ public final class Medias {
                             .disableStream(StreamType.SUBTITLE))
                     .execute();
             return Optional.of(outputStream.toByteArray());
-        }catch (IOException exception) {
+        }catch (Exception exception) {
             return Optional.empty();
         }
     }
