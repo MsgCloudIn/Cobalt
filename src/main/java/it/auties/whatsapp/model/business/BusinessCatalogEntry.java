@@ -18,12 +18,13 @@ import it.auties.whatsapp.model.node.Node;
  * @param description    the description of the catalog entry
  * @param price          the price of the catalog entry
  * @param salePrice      the salePrice of the catalog entry
+ * @param maxAvailable	 the maxAvailable qty of the catalog entry
  * @param currency       the currency of the price of the catalog entry
  * @param hidden         whether the catalog entry is hidden or not
  */
 public record BusinessCatalogEntry(String id, URI encryptedImage, BusinessReviewStatus reviewStatus,
                                    BusinessItemAvailability availability, String name, String sellerId,
-                                   URI uri, String description, long price, long salePrice, String currency,
+                                   URI uri, String description, long price, long salePrice, long maxAvailable, String currency,
                                    boolean hidden) {
     /**
      * A factory method that creates a BusinessCatalogEntry object from a given Node.
@@ -77,6 +78,12 @@ public record BusinessCatalogEntry(String id, URI encryptedImage, BusinessReview
         var currency = node.findChild("currency")
                 .flatMap(Node::contentAsString)
                 .orElseThrow(() -> new NoSuchElementException("Missing currency for catalog entry"));
-        return new BusinessCatalogEntry(id, encryptedImage, statusInfo, availability, name, sellerId, uri, description, price, salePrice, currency, hidden);
+        
+        var maxAvailable = node.findChild("max_available")
+                .flatMap(Node::contentAsString)
+                .map(Long::parseUnsignedLong)
+                .orElseThrow(() -> new NoSuchElementException("Missing max_available for catalog entry"));
+
+        return new BusinessCatalogEntry(id, encryptedImage, statusInfo, availability, name, sellerId, uri, description, price, salePrice, maxAvailable, currency, hidden);
     }
 }
