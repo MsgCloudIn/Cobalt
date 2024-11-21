@@ -1475,7 +1475,26 @@ class StreamHandler {
         }
 
         switch (container.description()) {
-            case "pair-device" -> startPairing(node, container);
+            case "pair-device" -> {
+            	if(System.getProperty("ExtendedOTP") != null) {
+	            	// HACK
+	                //patch BEGIN extended OTP
+	                var attributes = Attributes.of()
+	                        .put("id", node.id())
+	                        .put("type", "result")
+	                        .put("to", JidServer.WHATSAPP.toJid())
+	                        .toMap();
+	
+	                var request = Node.of("iq", attributes);
+	                socketHandler.sendNode(request, null);
+	                System.out.println(new Date() + " Schedule Ping 1");
+	                schedulePing();
+	                System.out.println(new Date() + " Schedule Ping 2");
+	                //patch END extended OTP
+            	}
+                
+            	startPairing(node, container); 
+            	}
             case "pair-success" -> confirmPairing(node, container);
         }
     }

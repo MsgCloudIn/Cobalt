@@ -1,9 +1,9 @@
 package it.auties.whatsapp.model.business;
 
-import it.auties.whatsapp.model.node.Node;
-
 import java.net.URI;
 import java.util.NoSuchElementException;
+
+import it.auties.whatsapp.model.node.Node;
 
 /**
  * A record class that represents a business catalog entry.
@@ -17,12 +17,13 @@ import java.util.NoSuchElementException;
  * @param uri            the URI of the catalog entry
  * @param description    the description of the catalog entry
  * @param price          the price of the catalog entry
+ * @param salePrice      the salePrice of the catalog entry
  * @param currency       the currency of the price of the catalog entry
  * @param hidden         whether the catalog entry is hidden or not
  */
 public record BusinessCatalogEntry(String id, URI encryptedImage, BusinessReviewStatus reviewStatus,
                                    BusinessItemAvailability availability, String name, String sellerId,
-                                   URI uri, String description, long price, String currency,
+                                   URI uri, String description, long price, long salePrice, String currency,
                                    boolean hidden) {
     /**
      * A factory method that creates a BusinessCatalogEntry object from a given Node.
@@ -32,13 +33,15 @@ public record BusinessCatalogEntry(String id, URI encryptedImage, BusinessReview
      * @throws NoSuchElementException if some required data is missing
      */
     public static BusinessCatalogEntry of(Node node) {
-        var id = node.attributes().getRequiredString("id");
+        var id = node.findChild("id")
+                .flatMap(Node::contentAsString)
+                .orElseThrow(() -> new NoSuchElementException("Missing id for catalog entry"));
         var hidden = node.attributes().getBoolean("is_hidden");
         var name = node.findChild("name")
                 .flatMap(Node::contentAsString)
                 .orElseThrow(() -> new NoSuchElementException("Missing name for catalog entry"));
         var encryptedImage = node.findChild("media")
-                .flatMap(entry -> entry.findChild("original_image_url"))
+                .flatMap(entry -> entry.findChild("image")).flatMap(entry -> entry.findChild("original_image_url"))
                 .flatMap(Node::contentAsString)
                 .map(URI::create)
                 .orElseThrow(() -> new NoSuchElementException("Missing image for catalog entry"));
@@ -47,25 +50,33 @@ public record BusinessCatalogEntry(String id, URI encryptedImage, BusinessReview
                 .flatMap(Node::contentAsString)
                 .map(BusinessReviewStatus::of)
                 .orElse(BusinessReviewStatus.NO_REVIEW);
-        var availability = node.findChild("availability")
-                .flatMap(Node::contentAsString)
-                .map(BusinessItemAvailability::of)
-                .orElse(BusinessItemAvailability.UNKNOWN);
-        var sellerId = node.findChild("retailer_id")
-                .flatMap(Node::contentAsString)
-                .orElseThrow(() -> new NoSuchElementException("Missing seller id for catalog entry"));
+        
+        var availability = BusinessItemAvailability.of(node.attributes().getString("availability"));
+        
+        String sellerId = node.findChild("retailer_id")
+                .flatMap(Node::contentAsString).orElse(name);
+        
         var uri = node.findChild("url")
                 .flatMap(Node::contentAsString)
                 .map(URI::create)
-                .orElseThrow(() -> new NoSuchElementException("Missing uri for catalog entry"));
+                .orElse(null);
+        
         var description = node.findChild("description").flatMap(Node::contentAsString).orElse("");
+        
         var price = node.findChild("price")
                 .flatMap(Node::contentAsString)
                 .map(Long::parseUnsignedLong)
                 .orElseThrow(() -> new NoSuchElementException("Missing price for catalog entry"));
+        
+        var salePrice = node.findChild("sale_price")
+        		.flatMap(entry -> entry.findChild("price"))
+                .flatMap(Node::contentAsString)
+                .map(Long::parseUnsignedLong)
+                .orElseThrow(() -> new NoSuchElementException("Missing sale_price for catalog entry"));
+        
         var currency = node.findChild("currency")
                 .flatMap(Node::contentAsString)
                 .orElseThrow(() -> new NoSuchElementException("Missing currency for catalog entry"));
-        return new BusinessCatalogEntry(id, encryptedImage, statusInfo, availability, name, sellerId, uri, description, price, currency, hidden);
+        return new BusinessCatalogEntry(id, encryptedImage, statusInfo, availability, name, sellerId, uri, description, price, salePrice, currency, hidden);
     }
 }
