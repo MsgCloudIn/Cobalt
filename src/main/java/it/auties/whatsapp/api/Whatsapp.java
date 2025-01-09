@@ -806,7 +806,7 @@ public class Whatsapp {
                 .status(MessageStatus.PENDING)
                 .senderJid(jidOrThrowError())
                 .key(key)
-                .message(message.withDeviceInfo(deviceInfo))
+                .message(recipient.toJid().hasServer(JidServer.GROUP_OR_COMMUNITY) ? message : message.withDeviceInfo(deviceInfo))
                 .timestampSeconds(timestamp)
                 .broadcast(recipient.toJid().hasServer(JidServer.BROADCAST))
                 .build();
@@ -2310,10 +2310,6 @@ public class Whatsapp {
                 .flatMap(Collection::stream)
                 .map(BusinessCatalogEntry::of)
                 .toList();
-//
-//    	
-//    	List<BusinessCatalogEntry> empty = new ArrayList<>();
-//    	return empty;
     }
 
     /**

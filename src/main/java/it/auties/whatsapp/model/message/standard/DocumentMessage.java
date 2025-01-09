@@ -100,7 +100,7 @@ public final class DocumentMessage extends MediaMessage<DocumentMessage>
     }
 
     @ProtobufBuilder(className = "DocumentMessageSimpleBuilder")
-    static DocumentMessage customBuilder(byte[] media, String fileName, String mimeType, String title, int pageCount, byte[] thumbnail, ContextInfo contextInfo) {
+    static DocumentMessage customBuilder(byte[] media, String fileName, String mimeType, String title, int pageCount, byte[] thumbnail, ContextInfo contextInfo, String caption) {
         var extensionIndex = fileName.lastIndexOf(".");
         Validate.isTrue(extensionIndex != -1 && extensionIndex + 1 < fileName.length(), "Expected fileName to be formatted as name.extension");
         var extension = fileName.substring(extensionIndex + 1);
@@ -109,6 +109,7 @@ public final class DocumentMessage extends MediaMessage<DocumentMessage>
                 .fileName(fileName)
                 .pageCount(pageCount > 0 ? pageCount : Medias.getPagesCount(media).orElse(1))
                 .title(title)
+                .caption(caption)
                 .thumbnail(thumbnail != null ? null : Medias.getDocumentThumbnail(media).orElse(null))
                 .thumbnailWidth(THUMBNAIL_WIDTH)
                 .thumbnailHeight(THUMBNAIL_HEIGHT)

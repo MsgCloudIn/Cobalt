@@ -8,6 +8,9 @@ public class DocumentMessageSimpleBuilder {
     private int pageCount;
     private byte[] thumbnail;
     private it.auties.whatsapp.model.info.ContextInfo contextInfo;
+    
+    // HACK
+    private String caption;
 
     public DocumentMessageSimpleBuilder() {
     }
@@ -31,6 +34,11 @@ public class DocumentMessageSimpleBuilder {
         this.title = title;
         return this;
     }
+    
+    public DocumentMessageSimpleBuilder caption(java.lang.String caption) {
+        this.caption = caption;
+        return this;
+    }
 
     public DocumentMessageSimpleBuilder pageCount(int pageCount) {
         this.pageCount = pageCount;
@@ -48,7 +56,7 @@ public class DocumentMessageSimpleBuilder {
     }
 
     public it.auties.whatsapp.model.message.standard.DocumentMessage build() {
-        return it.auties.whatsapp.model.message.standard.DocumentMessage.customBuilder(media, fileName, mimeType, title, pageCount, thumbnail, contextInfo);
+        return it.auties.whatsapp.model.message.standard.DocumentMessage.customBuilder(media, fileName, mimeType, title, pageCount, thumbnail, contextInfo, caption);
     }
 
 }
