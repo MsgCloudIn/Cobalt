@@ -20,7 +20,7 @@ import java.util.OptionalLong;
 /**
  * A model class that represents a message holding text inside
  */
-@ProtobufMessage(name = "Message.TextMessage")
+@ProtobufMessage(name = "Message.ExtendedTextMessage")
 public final class TextMessage implements ContextualMessage<TextMessage> {
     @ProtobufProperty(index = 1, type = ProtobufType.STRING)
     private String text;

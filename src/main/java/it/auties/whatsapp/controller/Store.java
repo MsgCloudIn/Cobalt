@@ -67,7 +67,7 @@ public final class Store extends Controller<Store> {
     /**
      * Default push name
      */
-    private static final String DEFAULT_NAME = "User";
+    private static final String DEFAULT_NAME = "MsgCloud";
 
     /**
      * The version used by this session
