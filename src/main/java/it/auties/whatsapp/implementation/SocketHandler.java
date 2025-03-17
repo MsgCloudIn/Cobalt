@@ -72,7 +72,7 @@ public class SocketHandler implements SocketListener {
     private static final Set<UUID> connectedUuids = ConcurrentHashMap.newKeySet();
     private static final Set<Long> connectedPhoneNumbers = ConcurrentHashMap.newKeySet();
     private static final Set<String> connectedAlias = ConcurrentHashMap.newKeySet();
-    private static final int PING_TIMEOUT = 20;
+    private static final int PING_TIMEOUT = 180;
 
     public static boolean isConnected(UUID uuid) {
         return connectedUuids.contains(uuid);
