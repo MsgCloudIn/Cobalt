@@ -21,12 +21,8 @@ public record SocketRequest(String id, Object body, CompletableFuture<Node> futu
     }
 
     private static CompletableFuture<Node> futureOrTimeout(Object body) {
-        var stacktraceProvider = Exceptions.current();
         return new CompletableFuture<Node>().orTimeout(TIMEOUT, SECONDS).exceptionally(throwable -> {
-            var error = new RequestException("Node timed out: " + body);
-            error.setStackTrace(stacktraceProvider.getStackTrace());
-            error.addSuppressed(throwable);
-            throw error;
+        	throw new RequestException("Node timed out: " + body);
         });
     }
 

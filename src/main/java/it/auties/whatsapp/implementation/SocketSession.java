@@ -25,7 +25,7 @@ public abstract sealed class SocketSession permits SocketSession.WebSocketSessio
         this.proxy = proxy;
     }
 
-    CompletableFuture<Void> connect(SocketListener listener) {
+    public CompletableFuture<Void> connect(SocketListener listener) {
         this.listener = listener;
         return CompletableFuture.completedFuture(null);
     }
@@ -52,7 +52,7 @@ public abstract sealed class SocketSession permits SocketSession.WebSocketSessio
         }
 
         @Override
-        CompletableFuture<Void> connect(SocketListener listener) {
+        public CompletableFuture<Void> connect(SocketListener listener) {
             if (webSocket != null) {
                 return CompletableFuture.completedFuture(null);
             }
@@ -170,7 +170,7 @@ public abstract sealed class SocketSession permits SocketSession.WebSocketSessio
         }
 
         @Override
-        CompletableFuture<Void> connect(SocketListener listener) {
+        public CompletableFuture<Void> connect(SocketListener listener) {
             if (isOpen()) {
                 return CompletableFuture.completedFuture(null);
             }
